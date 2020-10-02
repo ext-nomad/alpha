@@ -1,1 +1,19 @@
-h1 All articles
+h1 Articles listing page
+
+table
+  tr
+    th Title
+    th Descriptions
+    th colspan=2 Actions
+  - @articles.each do |a|
+    tr
+      td= link_to a.title, article_path(a)
+      td=a.description
+      td
+        = link_to  "edit", edit_article_path(a)
+      td
+        = link_to  "delete", article_path(a), method: :delete, data: {confirm: 'Are you sure?'}
+p
+= link_to  "New", new_article_path
+br
+= link_to  "Home", root_path

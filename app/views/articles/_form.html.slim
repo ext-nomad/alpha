@@ -1,0 +1,19 @@
+- if @article.errors.any?
+  h2 Check errors below:
+  ul
+    - @article.errors.full_messages.each do |msg|
+      li
+        = msg
+
+= form_with(model: @article, local: true) do |f|
+  strong
+    = f.label :title
+  br
+  = f.text_field :title
+  p
+  strong
+    = f.label :description
+  br
+  = f.text_area :description
+  p
+  = f.submit
