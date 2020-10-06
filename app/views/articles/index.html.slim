@@ -1,19 +1,28 @@
-h1 Articles listing page
+.text-center
+  h1 Articles listing page
 
-table
-  tr
-    th Title
-    th Descriptions
-    th colspan=2 Actions
+.container
   - @articles.each do |a|
-    tr
-      td= link_to a.title, article_path(a)
-      td=a.description
-      td
-        = link_to  "edit", edit_article_path(a)
-      td
-        = link_to  "delete", article_path(a), method: :delete, data: {confirm: 'Are you sure?'}
-p
+    .card.shadow
+      .card-header
+        .text-center
+          = link_to a.title, article_path(a)
+          |  by Me
+
+      .card-body
+        .text-center
+          =a.description
+      .card-footer
+        .text-center
+          = time_ago_in_words(a.created_at)
+          |  ago
+        .float-right
+          = link_to  "edit", edit_article_path(a)
+          |   
+          = link_to  "delete", article_path(a), method: :delete, data: {confirm: 'Are you sure?'}
+    br
+hr
 = link_to  "New", new_article_path
 br
 = link_to  "Home", root_path
+br

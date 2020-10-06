@@ -1,0 +1,51 @@
+@import "bootstrap";
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.215);
+}
+
+a {
+  color: white !important;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0) !important;
+  color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  color: white;
+  background-image: asset-url("bg.jpg");
+  height: auto;
+  background-attachment: fixed;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
