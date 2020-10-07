@@ -2,27 +2,27 @@
   h1 Articles listing page
 
 .container
-  - @articles.each do |a|
-    .card.shadow
-      .card-header
-        .text-center
-          = link_to a.title, article_path(a)
-          |  by Me
+  .row.justify-content-md-center
+    .col-md-8
+      - @articles.each do |a|
+        .card.shadow
+          .card-header
+            .text-center
+              = a.title
+              |  by Me
 
-      .card-body
-        .text-center
-          =a.description
-      .card-footer
-        .text-center
-          = time_ago_in_words(a.created_at)
-          |  ago
-        .float-right
-          = link_to  "edit", edit_article_path(a)
-          |   
-          = link_to  "delete", article_path(a), method: :delete, data: {confirm: 'Are you sure?'}
-    br
-hr
-= link_to  "New", new_article_path
-br
-= link_to  "Home", root_path
-br
+          .card-body
+            .text-center
+              = truncate(a.description, length: 100)
+          .card-footer
+            .float-left
+              .small
+                = time_ago_in_words(a.created_at)
+                |  ago
+            .float-right
+              = link_to 'show', article_path(a), class: 'btn btn-sm btn-outline-info'
+              |  
+              = link_to  "edit", edit_article_path(a), class: 'btn btn-sm btn-outline-warning'
+              |   
+              = link_to  "delete", article_path(a), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-sm btn-outline-danger'
+        br

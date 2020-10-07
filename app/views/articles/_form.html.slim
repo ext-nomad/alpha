@@ -1,19 +1,18 @@
-- if @article.errors.any?
-  h2 Check errors below:
-  ul
-    - @article.errors.full_messages.each do |msg|
-      li
-        = msg
+= render 'layouts/errors'
 
-= form_with(model: @article, local: true) do |f|
-  strong
-    = f.label :title
-  br
-  = f.text_field :title
-  p
-  strong
-    = f.label :description
-  br
-  = f.text_area :description
-  p
-  = f.submit
+.card.shadow
+  .card-body.text-center
+    = form_with(model: @article, local: true) do |f|
+      .form-inputs
+        strong
+          = f.label :title
+        br
+        = f.text_field :title, class: 'form-control'
+        p
+        strong
+          = f.label :description
+        br
+        = f.text_area :description, rows: 10, class: 'form-control'
+        br
+      .form-actions
+        = f.submit class: 'btn btn-lg btn-outline-light'

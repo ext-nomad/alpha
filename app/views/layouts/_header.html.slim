@@ -8,6 +8,8 @@
         ul.navbar-nav.mr-auto
         ul.navbar-nav.mr-right
           li.nav-item.active
+            = link_to  "Create_new", new_article_path, class: 'nav-link'
+          li.nav-item
             = link_to  "Articles", articles_path, class: 'nav-link'
           / li.nav-item.dropdown
           /   a#navbarDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button" 
@@ -19,4 +21,5 @@
           /     a.dropdown-item href="#"  Something else here
           li.nav-item
             = link_to  "About", about_path, class: 'nav-link'
+
 
