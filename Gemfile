@@ -29,6 +29,7 @@ group :test do
   gem 'webdrivers'
 end
 
+gem 'bcrypt'
 gem 'bootstrap', '~> 4.5.2'
 gem 'jquery-rails'
 gem 'slim-rails'
