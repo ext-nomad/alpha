@@ -1,9 +1,9 @@
-- if @article.errors.any?
+- if obj.errors.any?
   .alert.alert-danger.alert-dismissible.fade.show.shadow
     h3.alert-heading.text-center Check errors below:
 
     ul
-      - @article.errors.full_messages.each do |msg|
+      - obj.errors.full_messages.each do |msg|
         li
           = msg
     button.close aria-label="Close" data-dismiss="alert" type="button" 

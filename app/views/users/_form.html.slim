@@ -1,0 +1,23 @@
+= render 'layouts/errors', obj: @user
+
+.card.shadow
+  .card-body.text-center
+    = form_with(model: @user, local: true) do |f|
+      .form-inputs
+        strong
+          = f.label :username
+        br
+        = f.text_field :username, class: 'form-control', placeholder: 'Enter user name'
+        br
+        strong
+          = f.label :email
+        br
+        = f.email_field :email, class: 'form-control', placeholder: 'Enter user email'
+        br
+        strong
+          = f.label :password
+        br
+        = f.password_field :password, class: 'form-control', placeholder: 'Choose a password'
+        br
+      .form-actions
+        = f.submit 'Sign up', class: 'btn btn-lg btn-outline-light'

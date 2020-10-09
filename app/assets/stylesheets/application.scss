@@ -13,7 +13,7 @@
 }
 
 a {
-  color: white !important;
+  color: white;
 }
 
 html {
@@ -37,7 +37,7 @@ body {
   background-image: asset-url("bg.jpg");
   height: auto;
   background-attachment: fixed;
-  background-position: top;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -45,7 +45,7 @@ body {
 #logo {
   float: left;
   font-size: 1.7em;
-  color: #fff;
+  color: white;
   text-transform: uppercase;
   letter-spacing: -1px;
   font-weight: bold;
