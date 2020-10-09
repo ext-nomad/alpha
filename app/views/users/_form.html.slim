@@ -20,4 +20,4 @@
         = f.password_field :password, class: 'form-control', placeholder: 'Choose a password'
         br
       .form-actions
-        = f.submit 'Sign up', class: 'btn btn-lg btn-outline-light'
+        = f.submit (@user.new_record? ? 'Sign up' : 'Update account'), class: 'btn btn-lg btn-outline-light'
