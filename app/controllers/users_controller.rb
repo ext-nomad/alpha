@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: %i[edit update show destroy]
+
+  def show; end
+
   def new
     @user = User.new
   end
@@ -13,12 +17,9 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit
-    @user = User.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:notice] = 'Your account successfully updated'
       redirect_to articles_path
@@ -27,7 +28,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @user.destroy
+    flash[:notice] = 'User successfully deleted.'
+    redirect_to root_path
+  end
+
   private
+
+  def set_user
+    @user = User.find(params[:id])
+  end
 
   def user_params
     params.require(:user).permit(:username, :email, :password)

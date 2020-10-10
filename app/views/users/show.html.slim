@@ -1,0 +1,16 @@
+h1.text-center
+  = @user.username.capitalize
+  | 's profile
+  
+.container
+  .row.justify-content-md-center
+    .col-md-4.text-center
+      = gravatar_for(@user, size: 200)
+      p
+      .card.shadow
+        .card-header
+          = link_to @user.email, user_path(@user)
+        .card-footer
+          | Sign in 
+          = time_ago_in_words(@user.created_at)
+          |  ago
