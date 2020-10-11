@@ -1,0 +1,24 @@
+h1.text-center Log in for Alpha Blog
+
+.container
+  .row.justify-content-md-center
+    .col-md-8
+      .card.shadow
+        .card-body.text-center
+          = form_with(scope: :session, url: login_path) do |f|
+            .form-inputs
+              strong
+                = f.label :username
+              br
+              = f.text_field :username, class: 'form-control', placeholder: 'Enter your username'
+              br
+              strong
+                = f.label :password
+              br
+              = f.password_field :password, class: 'form-control', placeholder: 'Enter your password'
+              br
+            .form-actions
+              = f.submit 'Log In', class: 'btn btn-lg btn-outline-light'
+
+      .text-right
+        = link_to  "Back", root_path
