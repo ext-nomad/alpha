@@ -1,25 +1,27 @@
-    nav.navbar.navbar-expand-lg.navbar-dark.bg-light
-      = link_to  "Alpha", root_path, class: 'navbar-brand', id: 'logo'
+nav.navbar.navbar-expand-lg.navbar-dark.bg-light
+  = link_to  "Alpha", root_path, class: 'navbar-brand', id: 'logo'
 
-      button.navbar-toggler aria-controls="navbarSupportedContent" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarSupportedContent" data-toggle="collapse" type="button" 
-        span.navbar-toggler-icon
-        
-      #navbarSupportedContent.collapse.navbar-collapse
-        ul.navbar-nav.mr-auto
-        ul.navbar-nav.mr-right
-          li.nav-item.active
-            = link_to  "Create_new", new_article_path, class: 'nav-link'
-          li.nav-item
-            = link_to  "Articles", articles_path, class: 'nav-link'
-          / li.nav-item.dropdown
-          /   a#navbarDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button" 
-          /     | Dropdown
-          /   .dropdown-menu aria-labelledby="navbarDropdown" 
-          /     a.dropdown-item href="#"  Action
-          /     a.dropdown-item href="#"  Another action
-          /     .dropdown-divider
-          /     a.dropdown-item href="#"  Something else here
-          li.nav-item
-            = link_to  "About", about_path, class: 'nav-link'
+  button.navbar-toggler aria-controls="navbarSupportedContent" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarSupportedContent" data-toggle="collapse" type="button"
+    span.navbar-toggler-icon
+
+  #navbarSupportedContent.collapse.navbar-collapse
+    ul.navbar-nav.mr-auto
+    ul.navbar-nav.mr-right
+      li.nav-item.active
+        = link_to  "Users", users_path, class: 'nav-link'
+      li.nav-item
+        = link_to "Create_new", new_article_path, class: 'nav-link'
+      li.nav-item
+        = link_to  "Articles", articles_path, class: 'nav-link'
+      / li.nav-item.dropdown
+      /   a#navbarDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
+      /     | Dropdown
+      /   .dropdown-menu aria-labelledby="navbarDropdown"
+      /     a.dropdown-item href="#"  Action
+      /     a.dropdown-item href="#"  Another action
+      /     .dropdown-divider
+      /     a.dropdown-item href="#"  Something else here
+      li.nav-item
+        = link_to  "About", about_path, class: 'nav-link'
 
 

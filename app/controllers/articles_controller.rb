@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: %i[edit update show destroy]
 
   def index
-    @articles = Article.all
+    @articles = Article.paginate(page: params[:page], per_page: 4)
   end
 
   def show; end
@@ -41,10 +41,12 @@ class ArticlesController < ApplicationController
 
   private
 
+  # Setting active object :article based on it's given :id from params
   def set_article
     @article = Article.find(params[:id])
   end
 
+  # Returns permitted article params: :title, :description
   def article_params
     params.require(:article).permit(:title, :description)
   end
