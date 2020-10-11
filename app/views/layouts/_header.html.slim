@@ -24,6 +24,8 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-light
       li.nav-item
         = link_to  "About", about_path, class: 'nav-link'
       li.nav-item
-        = link_to  "Log out", logout_path, method: :delete, class: 'nav-link'
-
+        - if logged_in?
+          = link_to  "Log out", logout_path, method: :delete, class: 'nav-link'
+        - else
+          = link_to  "Log in", login_path, class: 'nav-link'
 
