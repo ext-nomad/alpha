@@ -7,18 +7,23 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-light
   #navbarSupportedContent.collapse.navbar-collapse
     ul.navbar-nav.mr-auto
     ul.navbar-nav.mr-right
-      li.nav-item.active
-        = link_to  "Users", users_path, class: 'nav-link'
-      li.nav-item
-        = link_to "Create_new", new_article_path, class: 'nav-link'
+      - if logged_in?
+        - if current_user.admin?
+          li.nav-item.active
+            = link_to  "Users", users_path, class: 'nav-link'
+        li.nav-item
+          = link_to "Create_new_article", new_article_path, class: 'nav-link'
       li.nav-item
         = link_to  "Articles", articles_path, class: 'nav-link'
 
-      li.nav-item
-        = link_to  "About", about_path, class: 'nav-link'
+      / li.nav-item
+      /   = link_to  "About", about_path, class: 'nav-link'
+
       - if logged_in?
         li.nav-item.dropdown
           a#navbarDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
+            - if current_user.admin?
+              | [Admin]
             = current_user.username
           .dropdown-menu.dropdown-menu-right
             = link_to  "Edit profile", edit_user_path(current_user), class: 'dropdown-item'
