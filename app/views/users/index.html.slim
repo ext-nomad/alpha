@@ -17,7 +17,8 @@ h1.text-center Alpha bloggers
               |  ago
             .float-right
               = link_to 'show', user_path(u), class: 'btn btn-sm btn-outline-info mr-1'
-              = link_to  "edit", edit_user_path(u), class: 'btn btn-sm btn-outline-warning mr-1'
-              = link_to  "delete", user_path(u), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-sm btn-outline-danger'
+              - if logged_in? && u == current_user
+                = link_to  "edit", edit_user_path(u), class: 'btn btn-sm btn-outline-warning mr-1'
+                = link_to  "delete", user_path(u), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-sm btn-outline-danger'
 .apple_pagination.mb-4
   = will_paginate @users, :container => false

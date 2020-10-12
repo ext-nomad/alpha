@@ -8,5 +8,6 @@
           = simple_format(@article.description)
         .card-footer
           = link_to 'back', articles_path, class: 'btn btn-sm btn-outline-info mr-2'
-          = link_to  "edit", edit_article_path(@article), class: 'btn btn-sm btn-outline-warning mr-2'
-          = link_to  "delete", article_path(@article), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-sm btn-outline-danger'
+          - if logged_in? && a.user == current_user
+            = link_to  "edit", edit_article_path(@article), class: 'btn btn-sm btn-outline-warning mr-2'
+            = link_to  "delete", article_path(@article), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-sm btn-outline-danger'

@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[edit update show destroy]
 
-  def show; end
+  def show
+    @articles = Article.where(user: @user).paginate(page: params[:page], per_page: 2)
+  end
 
   def index
     @users = User.paginate(page: params[:page], per_page: 6)

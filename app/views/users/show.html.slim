@@ -14,3 +14,10 @@ h1.text-center
           | Sign in 
           = time_ago_in_words(@user.created_at)
           |  ago
+  br
+  h2.text-center Articles:
+  .row.justify-content-md-center
+      .col-md-8
+        = render 'articles/articles'
+  .apple_pagination.mb-4
+    = will_paginate @articles, :container => false

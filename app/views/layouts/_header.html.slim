@@ -13,19 +13,16 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-light
         = link_to "Create_new", new_article_path, class: 'nav-link'
       li.nav-item
         = link_to  "Articles", articles_path, class: 'nav-link'
-      / li.nav-item.dropdown
-      /   a#navbarDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
-      /     | Dropdown
-      /   .dropdown-menu aria-labelledby="navbarDropdown"
-      /     a.dropdown-item href="#"  Action
-      /     a.dropdown-item href="#"  Another action
-      /     .dropdown-divider
-      /     a.dropdown-item href="#"  Something else here
+
       li.nav-item
         = link_to  "About", about_path, class: 'nav-link'
-      li.nav-item
-        - if logged_in?
-          = link_to  "Log out", logout_path, method: :delete, class: 'nav-link'
-        - else
-          = link_to  "Log in", login_path, class: 'nav-link'
-
+      - if logged_in?
+        li.nav-item.dropdown
+          a#navbarDropdown.nav-link.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
+            = current_user.username
+          .dropdown-menu.dropdown-menu-right
+            = link_to  "Edit profile", edit_user_path(current_user), class: 'dropdown-item'
+            .dropdown-divider
+            = link_to  "Log out", logout_path, method: :delete, class: 'dropdown-item'
+      -else
+        = link_to  "Log in", login_path, class: 'nav-link'
