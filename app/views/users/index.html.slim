@@ -1,4 +1,7 @@
-h1.text-center Alpha bloggers
+.card.shadow.mb-4
+  .card-body
+    .text-center
+      h1 Alpha bloggers
 
 .container
   .row.justify-content-md-center
@@ -16,7 +19,7 @@ h1.text-center Alpha bloggers
               = time_ago_in_words(u.created_at)
               |  ago
             .float-right
-              = link_to 'show', user_path(u), class: 'btn btn-sm btn-outline-info mr-1'
+              = link_to 'show', user_path(u), class: 'btn btn-sm btn-outline-light mr-1'
               - if logged_in? && u == current_user
                 = link_to  "edit", edit_user_path(u), class: 'btn btn-sm btn-outline-warning mr-1'
                 = link_to  "delete", user_path(u), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-sm btn-outline-danger'

@@ -1,19 +1,18 @@
-.text-center
-  h1 Categories listing page
+.card.shadow.mb-4
+  .card-body
+    .text-center
+      h1 All categories
 
 .container
   .row.justify-content-md-center
     .col-md-8
       - @categories.each do |cat|
         .card.shadow.mb-2
-          .card-body
-            .float-left
-              = cat.name
-            .float-right
-              = link_to 'show', category_path(cat), class: 'btn btn-sm btn-outline-info mr-1'
-              - if logged_in? && current_user.admin?
-                = link_to  "edit", edit_category_path(cat), class: 'btn btn-sm btn-outline-warning mr-1'
-                = link_to  "delete", category_path(cat), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-sm btn-outline-danger'
-        br
+          = link_to category_path(cat), class: 'btn btn-outline-light' do
+            .card-body
+              h4
+                = cat.name
+                .badge.badge-light.ml-1
+                  = cat.articles.count
 .apple_pagination.mb-4
   = will_paginate @categories, :container => false

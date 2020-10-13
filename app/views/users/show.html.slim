@@ -1,7 +1,10 @@
-h1.text-center
-  = @user.username.capitalize
-  | 's profile
-  
+.card.shadow.mb-4
+  .card-body
+    .text-center
+      h1
+        = @user.username.capitalize
+        | 's profile
+
 .container
   .row.justify-content-md-center
     .col-md-4.text-center

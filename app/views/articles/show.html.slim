@@ -4,6 +4,7 @@
       .card.shadow.text-center
         .card-header
           h2.strong= @article.title
+
         .card-body.text-left
           = simple_format(@article.description)
         .card-footer
@@ -11,3 +12,6 @@
           - if logged_in? && (@article.user == current_user || current_user.admin?)
             = link_to  "edit", edit_article_path(@article), class: 'btn btn-sm btn-outline-warning mr-2'
             = link_to  "delete", article_path(@article), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-sm btn-outline-danger'
+          - if @article.categories.any?
+            .float-right
+              = render @article.categories

@@ -13,6 +13,11 @@
           = f.label :description
         br
         = f.text_area :description, rows: 10, class: 'form-control'
+        p
+        strong
+          = f.label :categories
         br
+        = f.collection_select(:category_ids, Category.all, :id, :name, {}, {size: 6, class: 'custom-select', multiple: true})
+      br
       .form-actions
         = f.submit class: 'btn btn-lg btn-outline-light'

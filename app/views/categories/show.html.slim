@@ -1,7 +1,14 @@
+.card.shadow.mb-4
+  .card-body
+    .text-center
+      h1
+        = @category.name
+        .badge.badge-light
+          = @articles.count
+
 .container
   .row.justify-content-md-center
     .col-md-8
-      .card.shadow.mb-2
-        .card-body
-          .float-left
-            = @category.name
+      = render 'articles/articles'
+.apple_pagination.mb-4
+  = will_paginate @articles, :container => false
