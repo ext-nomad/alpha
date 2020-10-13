@@ -9,4 +9,5 @@ Rails.application.routes.draw do
 
   resources :users, except: %i[new]
   resources :articles
+  resources :categories, except: %i[destroy]
 end
