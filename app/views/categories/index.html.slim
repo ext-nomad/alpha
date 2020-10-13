@@ -15,5 +15,5 @@
                 = link_to  "edit", edit_category_path(cat), class: 'btn btn-sm btn-outline-warning mr-1'
                 = link_to  "delete", category_path(cat), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-sm btn-outline-danger'
         br
-/ .apple_pagination.mb-4
-/   = will_paginate @articles, :container => false
+.apple_pagination.mb-4
+  = will_paginate @categories, :container => false
