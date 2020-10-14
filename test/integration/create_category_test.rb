@@ -6,7 +6,7 @@ class CreateCategoryTest < ActionDispatch::IntegrationTest
                               email: 'jack@example.com',
                               password: 'password',
                               admin: true)
-    sign_in_as(@admin_user)
+    log_in_as(@admin_user)
   end
 
   test 'get new category form and create category' do

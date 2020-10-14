@@ -7,7 +7,10 @@ class ArticlesController < ApplicationController
     @articles = Article.paginate(page: params[:page], per_page: 4)
   end
 
-  def show; end
+  def show
+    @comment = Comment.new
+    @comments = @article.comments
+  end
 
   def new
     @article = Article.new

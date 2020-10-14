@@ -1,0 +1,12 @@
+.card.shadow.mb-2
+  .card-body.text-center
+    = simple_format(comment.content)
+    - if comment.user.present?
+      .float-left
+        = link_to user_path(comment.user), class: 'badge btn-outline-light' do
+          | by 
+          = comment.user.username
+    - if current_user == comment.user
+      .float-right
+        = link_to "delete", article_comment_path(@article, comment), method: :delete, class: 'badge btn-outline-light'
+

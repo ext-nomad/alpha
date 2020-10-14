@@ -1,0 +1,11 @@
+.card.shadow
+  .card-body.text-center
+    = form_with(model: @comment, url: article_comments_path(@article), local: true) do |f|
+      .form-inputs
+        strong
+          = f.label :content, 'Leave a comment'
+        br
+        = f.text_area :content, rows: 4, class: 'form-control'
+      br
+      .form-actions
+        = f.submit class: 'btn btn-sm btn-outline-light'

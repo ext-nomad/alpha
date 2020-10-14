@@ -1,17 +1,24 @@
 .container
   .row.justify-content-md-center
     .col-md-8
-      .card.shadow.text-center
+      .card.shadow.text-center.mb-2
         .card-header
           h2.strong= @article.title
 
         .card-body.text-left
           = simple_format(@article.description)
         .card-footer
-          = link_to 'back', articles_path, class: 'btn btn-sm btn-outline-info mr-2'
+          = link_to 'back', articles_path, class: 'btn btn-sm btn-outline-light mr-2'
           - if logged_in? && (@article.user == current_user || current_user.admin?)
             = link_to  "edit", edit_article_path(@article), class: 'btn btn-sm btn-outline-warning mr-2'
             = link_to  "delete", article_path(@article), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-sm btn-outline-danger'
           - if @article.categories.any?
             .float-right
               = render @article.categories
+
+      - if logged_in?
+        = render 'articles/comments/form'
+      br
+      h4.text-center Comments:
+      - @comments.each do |comment|
+        = render 'articles/comments/comment', comment: comment
