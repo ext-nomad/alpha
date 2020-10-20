@@ -1,11 +1,44 @@
 @import "bootstrap";
 
-.navbar {
-  background-color: rgba(0, 0, 0, 0) !important;
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  display: flex;
+  transition: 0.6s;
+  background-color: rgba(0, 0, 0, 0);
+
+  #logo {
+    float: left;
+    font-size: 1.7em;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-weight: bold;
+  }
+
+  .nav-link {
+    color: white;
+  }
 }
 
-.nav-link {
-  color: white !important;
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+nav.sticky {
+  padding: 5px 100px;
+  background-color: rgb(255, 255, 255);
+  .nav-link {
+    color: black;
+  }
+  #logo {
+    color: black;
+  }
 }
 
 .card {
@@ -14,10 +47,6 @@
 
 .text-shadow {
   text-shadow: 1px 1px black;
-}
-
-a {
-  color: white;
 }
 
 html {
@@ -44,15 +73,10 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-#logo {
-  float: left;
-  font-size: 1.7em;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  font-weight: bold;
+  a {
+    color: white;
+    text-decoration: none;
+  }
 }
 
 .apple_pagination {
