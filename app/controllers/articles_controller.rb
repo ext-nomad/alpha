@@ -4,7 +4,8 @@ class ArticlesController < ApplicationController
   before_action :require_same_user, only: %i[edit update destroy]
 
   def index
-    @articles = Article.paginate(page: params[:page], per_page: 4)
+    # @articles = Article.paginate(page: params[:page], per_page: 4)
+    @articles = Article.all
   end
 
   def show
@@ -22,8 +23,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
     @article.user = current_user
     if @article.save
-      flash[:notice] = 'Article successfully created.'
-      redirect_to articles_path
+      redirect_to articles_path, notice: 'Article successfully created.'
     else
       render 'new'
     end
@@ -31,8 +31,7 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
-      flash[:notice] = 'Article successfully updated.'
-      redirect_to articles_path
+      redirect_to articles_path, notice: 'Article successfully updated.'
     else
       render 'edit'
     end
@@ -40,8 +39,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article.destroy
-    flash[:notice] = 'Article successfully deleted.'
-    redirect_to articles_path
+    redirect_to articles_path, notice: 'Article successfully deleted.'
   end
 
   private
@@ -55,9 +53,8 @@ class ArticlesController < ApplicationController
   end
 
   def require_same_user
-    if current_user != @article.user && !current_user.admin?
-      flash[:alert] = 'You can only edit or delete your own articles'
-      redirect_to @article
+    unless current_user == @article.user && current_user.admin?
+      redirect_to @article, alert: 'You can only edit or delete your own articles'
     end
   end
 end
