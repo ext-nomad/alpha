@@ -9,10 +9,16 @@ html
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     = stylesheet_pack_tag 'custom', media: 'all', 'data-turbolinks-track': 'reload'
   body
-    = render 'layouts/header'
+    header
+      = render 'layouts/header'
 
-    = render 'layouts/messages'
+      
+    main
+      .container
+        = render 'layouts/messages'
+        
+        = yield
 
-    = yield
-    br
-    = render 'layouts/footer'
+        br
+    footer
+      = render 'layouts/footer'

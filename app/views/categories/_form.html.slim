@@ -1,13 +1,13 @@
-      = render 'layouts/errors', obj: @category
+= render 'layouts/errors', obj: @category
 
-      .card.shadow
-        .card-body.text-center
-          = form_with(model: @category, local: true) do |f|
-            .form-inputs
-              strong
-                = f.label :name, 'Category name:'
-              br
-              = f.text_field :name, class: 'form-control'
-              br
-            .form-actions
-              = f.submit class: 'btn btn-lg btn-outline-light'
+.card.shadow
+  .card-body.text-center
+    = form_with(model: @category, local: true) do |f|
+      .form-inputs
+        strong
+          = f.label :name, 'Category name:'
+        br
+        = f.text_field :name, class: 'form-control'
+        br
+      .form-actions
+        = f.submit class: 'btn btn-lg btn-outline-light'
