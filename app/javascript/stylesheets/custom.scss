@@ -1,5 +1,3 @@
-@import "bootstrap";
-
 nav {
   position: fixed;
   top: 0;
@@ -67,7 +65,7 @@ footer {
 body {
   font-family: "Fira Code", monospace !important;
   color: white;
-  background-image: asset-url("bg.jpg");
+  background-color: black;
   height: auto;
   background-attachment: fixed;
   background-position: center;
