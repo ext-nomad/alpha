@@ -1,26 +1,28 @@
-.card.shadow.mb-4
-  .card-body
-    .text-center
-      h1 Log in for Alpha Blog
-
-.row.justify-content-md-center
-  .col-md-8
-    .card.shadow
-      .card-body.text-center
+.row
+  .col-lg-4.mx-auto
+    .card-register.shadow
+      .card-title
+        h3 Welcome
+      .register-form
         = form_with(scope: :session, url: login_path) do |f|
           .form-inputs
-            strong
+            small
               = f.label :username
             br
             = f.text_field :username, class: 'form-control', placeholder: 'Enter your username'
             br
-            strong
+            small
               = f.label :password
             br
             = f.password_field :password, class: 'form-control', placeholder: 'Enter your password'
             br
           .form-actions
-            = f.submit 'Log In', class: 'btn btn-lg btn-outline-light'
+            = f.submit 'Login', class: 'btn btn-block btn-round btn-outline-light'
+            br
+            .text-center
+              | or
+              .row
+              = link_to  "REGISTER", signup_path
 
     .text-right
       = link_to  "Back", root_path

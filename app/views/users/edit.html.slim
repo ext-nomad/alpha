@@ -6,6 +6,8 @@
 
 .row.justify-content-md-center
   .col-md-8
-    = render  'users/form'
+    .card.shadow
+      .card-body
+        = render  'users/form'
     .text-right
       = link_to  "Back", root_path

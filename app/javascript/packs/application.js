@@ -13,4 +13,8 @@ $(document).on("turbolinks:load", function () {
     var header = document.querySelector("nav");
     header.classList.toggle("sticky", window.scrollY > 0);
   });
+
+  window.addEventListener("mousemove", (event) => {
+    console.log(event.pageX, event.pageY);
+  });
 });

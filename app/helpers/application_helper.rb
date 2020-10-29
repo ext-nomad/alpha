@@ -6,4 +6,12 @@ module ApplicationHelper
     gravatar_url = "https://www.gravatar.com/avatar/#{hash}?s=#{size}"
     image_tag(gravatar_url, alt: user.username, class: 'shadow rounded-circle')
   end
+
+  def body_class
+    if current_page?(login_path) || current_page?(signup_path)
+      'register'
+    else
+      'main'
+    end
+  end
 end

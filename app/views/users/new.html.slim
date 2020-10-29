@@ -1,10 +1,13 @@
-.card.shadow.mb-4
-  .card-body
-    .text-center
-      h1 Sign up for Alpha Blog
 
-.row.justify-content-md-center
-  .col-md-8
-    = render  'users/form'
+= render 'layouts/errors', obj: @user
+.row
+  .col-lg-4.mx-auto
+    .card-register.shadow
+      .card-title
+        h3 
+          | Registration
+          .row
+          | form
+      = render  'users/form'
     .text-right
       = link_to  "Back", root_path

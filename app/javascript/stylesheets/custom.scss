@@ -1,22 +1,41 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  font-family: "Fira Code", monospace !important;
+  font-family: "Montserrat", "Helvetica", Arial, sans-serif;
   color: white;
-  background-image: url("../../assets/images/bg.jpg");
   height: auto;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+
   a {
     color: white;
     text-decoration: none;
   }
 }
 
+body.main {
+  background-image: url("../../assets/images/bg.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body.register {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../../assets/images/register-bg.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 header {
+  padding-top: 25px;
   margin-bottom: 50px;
 }
 
@@ -25,21 +44,38 @@ main {
 }
 
 footer {
-  background-color: rgba(0, 0, 0, 0) !important;
+  position: relative;
+  line-height: 20px;
+  background-color: transparent !important;
   color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9em;
+  font-weight: bold;
   margin-top: 50px;
+  margin-bottom: 8px;
   overflow: hidden;
+  a:hover {
+    color: rgb(94, 94, 94);
+    text-decoration: none;
+  }
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 nav {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 1030;
   width: 100%;
   display: flex;
-  transition: 0.6s;
-  background-color: rgba(0, 0, 0, 0);
+  transition: 0.6s all;
+  background-color: transparent;
+  font-weight: 300;
+  text-transform: uppercase;
 
   #logo {
     float: left;
@@ -55,15 +91,9 @@ nav {
   }
 }
 
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
 nav.sticky {
-  padding: 5px 100px;
-  background-color: rgb(255, 255, 255);
+  padding: 10px 120px;
+  background-color: white;
   .nav-link {
     color: black;
   }
@@ -72,17 +102,77 @@ nav.sticky {
   }
 }
 
+.alert {
+  z-index: 1031;
+}
+
+.ml-auto,
+.mx-auto {
+  margin-left: auto !important;
+}
+.mr-auto,
+.mx-auto {
+  margin-right: auto !important;
+}
+
+.filter {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 .card {
   background-color: rgba(255, 255, 255, 0.215);
+}
+
+.card-register {
+  background-color: #ff8f5e;
+  border-radius: 8px;
+  color: #fff;
+  max-width: 350px;
+  margin: 80px 0 70px 0;
+  min-height: 400px;
+  padding: 30px;
+
+  label {
+    margin-top: 15px;
+  }
+  .card-title {
+    text-align: center;
+  }
+  .btn {
+    margin-top: 30px;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 15px;
+  }
+  a:hover {
+    color: rgb(94, 94, 94);
+    text-decoration: none;
+  }
+
+  .input-group-text {
+    border: 1px solid white;
+  }
+
+  .register-form {
+    .form-control {
+      border: 1px solid transparent !important;
+    }
+    .input-group .form-control {
+      margin-left: -1px;
+    }
+  }
 }
 
 .text-shadow {
   text-shadow: 1px 1px black;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+.btn-round {
+  border-radius: 30px;
 }
 
 .apple_pagination {
