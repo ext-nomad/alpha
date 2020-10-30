@@ -120,6 +120,7 @@ nav {
 }
 
 nav.sticky {
+  box-shadow: 0 0 15px 0px rgba(0, 0, 0, 0.4);
   .nav-link {
     color: rgba(0, 0, 0, 0.7);
     &:hover {
