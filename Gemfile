@@ -30,6 +30,7 @@ group :test do
 end
 
 gem 'bcrypt'
+gem 'faker'
 gem 'jquery-rails'
 gem 'slim-rails'
 gem 'will_paginate'
