@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :require_same_user, only: %i[edit update destroy]
 
   def show
-    @articles = Article.where(user: @user).paginate(page: params[:page], per_page: 2)
+    @articles = Article.where(user: @user).all # .paginate(page: params[:page], per_page: 2)
   end
 
   def index

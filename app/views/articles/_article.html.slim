@@ -1,21 +1,22 @@
-.card.shadow.mb-2
-  .card-header
-    .text-center
-      = a.title
-      |  by 
-      = link_to a.user.username, user_path(a.user)
-      - if a.categories.any?
-        .float-right
-          = render a.categories
-  .card-body
-    .text-center
-      = truncate(a.description, length: 100)
-  .card-footer
-    .float-left
-      = time_ago_in_words(a.created_at)
-      |  ago
-    .float-right
-      = link_to 'show', article_path(a), class: 'btn btn-sm btn-outline-light mr-1'
-      - if logged_in? && (a.user == current_user || current_user.admin?)
-        = link_to  "edit", edit_article_path(a), class: 'btn btn-sm btn-outline-warning mr-1'
-        = link_to  "delete", article_path(a), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-sm btn-outline-danger'
+.styled-card.mx-auto style='width: 30rem'
+  .scard-body
+    .scard-body
+      .stats
+        = render a.categories
+      .header 
+        small 
+          = time_ago_in_words(a.created_at)
+          |  ago
+      h4.scard-title 
+        = a.title
+      h6.scard-subtitle.mb-2.text-muted 
+          | by 
+          = link_to a.user.username, user_path(a.user)
+      .scard-description
+        = truncate(a.description, length: 100)
+      .scard-footer
+        .d-flex.justify-content-between
+          = link_to 'show', article_path(a)
+          - if logged_in? && (a.user == current_user || current_user.admin?)
+            = link_to  "edit", edit_article_path(a)
+            = link_to  "delete", article_path(a), method: :delete, data: {confirm: 'Are you sure?'}

@@ -4,10 +4,9 @@
     .row.justify-content-center
       .no-padding
         = gravatar_for(@user, size: 180)
-    
-
     .text-center
-      h4= link_to @user.email, user_path(@user)
+      h4
+        = link_to @user.username, user_path(@user)
       .row
       h6
         | Sign in 
@@ -25,16 +24,16 @@
       #articles.tab-pane.fade.show.active aria-labelledby="articles-tab" role="tabpanel"
         br
         .row.justify-content-center
-          .col-md-8
+          .col
             - @articles.each do |a|
               = render 'articles/article', a: a
-        .apple_pagination.mb-4
-          = will_paginate @articles, :container => false
+        / .apple_pagination.mb-4
+        /   = will_paginate @articles, :container => false
 
       #comments.tab-pane.fade aria-labelledby="comments-tab" role="tabpanel"  
         br
         .row.justify-content-center
-          .col-md-8
+          .col
             - @user.comments.each do |com|
               = render 'articles/comments/comment', comment: com
 
