@@ -1,13 +1,15 @@
-.card.shadow.mb-4
-  .card-body
-    .text-center
-      h1 Edit your profile
+.spacer
+.container
+  .card.shadow.mb-4
+    .card-body
+      .text-center
+        h1 Edit your profile
 
 
-.row.justify-content-md-center
-  .col-md-8
-    .card.shadow
-      .card-body
-        = render  'users/form'
-    .text-right
-      = link_to  "Back", root_path
+  .row.justify-content-md-center
+    .col-md-8
+      .card.shadow
+        .card-body
+          = render  'users/form'
+      .text-right
+        = link_to  "Back", root_path

@@ -1,27 +1,47 @@
-.card.shadow.mb-4
-  .card-body
+.parallax-container
+.profile-container
+  .container
+    .row.justify-content-center
+      .no-padding
+        = gravatar_for(@user, size: 180)
+    
+
     .text-center
-      h1
-        = @user.username.capitalize
-        | 's profile
-
-
-.row.justify-content-md-center
-  .col-md-4.text-center
-    = gravatar_for(@user, size: 200)
-    p
-    .card.shadow
-      .card-header
-        = link_to @user.email, user_path(@user)
-      .card-footer
+      h4= link_to @user.email, user_path(@user)
+      .row
+      h6
         | Sign in 
         = time_ago_in_words(@user.created_at)
         |  ago
-br
-h2.text-center Articles:
-.row.justify-content-md-center
-    .col-md-8
-      - @articles.each do |a|
-        = render 'articles/article', a: a
-.apple_pagination.mb-4
-  = will_paginate @articles, :container => false
+    br
+    ul.nav.nav-tabs.justify-content-center role="tablist"
+      li.nav-item
+        a.nav-link.active aria-controls="articles" aria-selected="true" data-toggle="tab" href="#articles" role="tab"  Articles
+
+      li.nav-item
+        a.nav-link aria-controls="comments" aria-selected="false" data-toggle="tab" href="#comments" role="tab"  Comments
+
+    .tab-content
+      #articles.tab-pane.fade.show.active aria-labelledby="articles-tab" role="tabpanel"
+        br
+        .row.justify-content-center
+          .col-md-8
+            - @articles.each do |a|
+              = render 'articles/article', a: a
+        .apple_pagination.mb-4
+          = will_paginate @articles, :container => false
+
+      #comments.tab-pane.fade aria-labelledby="comments-tab" role="tabpanel"  
+        br
+        .row.justify-content-center
+          .col-md-8
+            - @user.comments.each do |com|
+              = render 'articles/comments/comment', comment: com
+
+
+
+
+
+
+
+

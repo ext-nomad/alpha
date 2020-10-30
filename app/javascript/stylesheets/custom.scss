@@ -1,6 +1,8 @@
 html {
   position: relative;
   min-height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -8,35 +10,36 @@ body {
   min-height: 100vh;
   flex-direction: column;
   font-family: "Montserrat", "Helvetica", Arial, sans-serif;
-  color: white;
+  // color: white;
   height: auto;
-
+  margin: 0;
+  padding: 0;
+  overflow: auto;
   a {
-    color: white;
+    // color: white;
     text-decoration: none;
   }
 }
 
 body.main {
-  background-image: url("../../assets/images/bg.jpg");
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  // background-image: url("../../assets/images/bg.jpg");
+  // background-attachment: fixed;
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // background-size: cover;
 }
 
 body.register {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../../assets/images/register-bg.jpg");
-  background-attachment: fixed;
+  background-attachment: local;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 header {
-  padding-top: 25px;
-  margin-bottom: 50px;
+  background-color: transparent !important;
 }
 
 main {
@@ -46,12 +49,12 @@ main {
 footer {
   position: relative;
   line-height: 20px;
-  background-color: transparent !important;
+  background-color: black;
   color: rgba(255, 255, 255, 0.5);
   font-size: 0.9em;
   font-weight: bold;
   margin-top: 50px;
-  margin-bottom: 8px;
+  padding-bottom: 8px;
   overflow: hidden;
   a:hover {
     color: rgb(94, 94, 94);
@@ -60,15 +63,15 @@ footer {
 }
 
 .sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
+  padding: 10px 100px !important;
+  background-color: white;
 }
 
 nav {
-  position: fixed;
+  position: fixed !important;
   top: 0;
   left: 0;
+
   z-index: 1030;
   width: 100%;
   display: flex;
@@ -76,6 +79,7 @@ nav {
   background-color: transparent;
   font-weight: 300;
   text-transform: uppercase;
+  padding: 40px 80px !important;
 
   #logo {
     float: left;
@@ -92,8 +96,6 @@ nav {
 }
 
 nav.sticky {
-  padding: 10px 120px;
-  background-color: white;
   .nav-link {
     color: black;
   }
@@ -102,9 +104,9 @@ nav.sticky {
   }
 }
 
-.alert {
-  z-index: 1031;
-}
+// .alert {
+//   z-index: 1029;
+// }
 
 .ml-auto,
 .mx-auto {
@@ -115,19 +117,55 @@ nav.sticky {
   margin-right: auto !important;
 }
 
-.filter {
-  background-color: rgba(0, 0, 0, 0.5);
+.parallax-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 420px;
+  width: 100%;
+  z-index: -1;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../../assets/images/profile-bg.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.profile-container {
+  background-color: white;
+  padding-top: 0;
+  padding-bottom: 70px;
+  position: relative;
+  z-index: 2;
+}
+
+.no-padding {
+  padding: 0 !important;
+  max-width: 180px;
+  margin: -85px auto 0;
+  display: inline-block;
+}
+
+.spacer {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin-bottom: 130px;
+  background: transparent;
+  z-index: -1;
+  overflow: visible;
 }
 
 .card {
-  background-color: rgba(255, 255, 255, 0.215);
+  background-color: rgba(104, 104, 104, 0.5);
 }
 
 .card-register {
   background-color: #ff8f5e;
   border-radius: 8px;
   color: #fff;
-  max-width: 350px;
+  max-width: 450px;
   margin: 80px 0 70px 0;
   min-height: 400px;
   padding: 30px;

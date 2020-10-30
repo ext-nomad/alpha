@@ -11,10 +11,13 @@ import "@fortawesome/fontawesome-free/css/all";
 $(document).on("turbolinks:load", function () {
   window.addEventListener("scroll", function () {
     var header = document.querySelector("nav");
-    header.classList.toggle("sticky", window.scrollY > 0);
-  });
+    var tbg = document.querySelector(".parallax-container");
 
-  window.addEventListener("mousemove", (event) => {
-    console.log(event.pageX, event.pageY);
+    header.classList.toggle("sticky", window.scrollY > 0);
+    tbg.style.transform =
+      "translate3d(0px, " + window.scrollY * 0.5 + "px, 0px)";
   });
+  // window.addEventListener("mousemove", (event) => {
+  //   console.log(event.pageX, event.pageY);
+  // });
 });

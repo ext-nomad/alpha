@@ -1,11 +1,13 @@
-.card.shadow.mb-4
-  .card-body
-    .text-center
-      h1 All articles
+.spacer
+.container
+  .card.shadow.mb-4
+    .card-body
+      .text-center
+        h1 All articles
 
-.row.justify-content-md-center
-  .col-md-8
-    - @articles.each do |a|
-      = render 'articles/article', a: a
-.apple_pagination.mb-4
-  = will_paginate @articles, :container => false
+  .row.justify-content-md-center
+    .col-md-8
+      - @articles.each do |a|
+        = render 'articles/article', a: a
+  .apple_pagination.mb-4
+    = will_paginate @articles, :container => false

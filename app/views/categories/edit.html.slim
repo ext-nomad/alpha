@@ -1,11 +1,13 @@
-.card.shadow.mb-4
-  .card-body
-    .text-center
-      h1 Editing #{@category.name.capitalize} category
+.spacer
+.container
+  .card.shadow.mb-4
+    .card-body
+      .text-center
+        h1 Editing #{@category.name.capitalize} category
 
 
-.row.justify-content-md-center
-  .col-md-8
-    = render 'categories/form'
-    .text-right
-      = link_to  "Back", categories_path
+  .row.justify-content-md-center
+    .col-md-8
+      = render 'categories/form'
+      .text-right
+        = link_to  "Back", categories_path

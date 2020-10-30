@@ -1,11 +1,13 @@
-.card.shadow.mb-4
-  .card-body
-    .text-center
-      h1 Create a new article
+.spacer
+.container
+  .card.shadow.mb-4
+    .card-body
+      .text-center
+        h1 Create a new article
 
 
-.row.justify-content-md-center
-  .col-md-8
-    = render 'articles/form'
-    .text-right
-      = link_to  "Back", articles_path
+  .row.justify-content-md-center
+    .col-md-8
+      = render 'articles/form'
+      .text-right
+        = link_to  "Back", articles_path

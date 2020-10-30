@@ -1,27 +1,29 @@
-.card.shadow.mb-4
-  .card-body
-    .text-center
-      h1 Alpha bloggers
+.spacer
+.container
+  .card.shadow.mb-4
+    .card-body
+      .text-center
+        h1 Alpha bloggers
 
 
-.row.justify-content-md-center
-  - @users.each do |u|
-    .col-md-4
-      .card.shadow.mb-4
-        .card-header
-          .text-center
-            = u.username.capitalize
-        .card-body
-          .text-center
-            = gravatar_for(u, size: 150)
-        .card-footer
-          .float-left
-            = time_ago_in_words(u.created_at)
-            |  ago
-          .float-right
-            = link_to 'show', user_path(u), class: 'btn btn-sm btn-outline-light mr-1'
-            - if logged_in? && u == current_user
-              = link_to  "edit", edit_user_path(u), class: 'btn btn-sm btn-outline-warning mr-1'
-              = link_to  "delete", user_path(u), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-sm btn-outline-danger'
-.apple_pagination.mb-4
-  = will_paginate @users, :container => false
+  .row.justify-content-md-center
+    - @users.each do |u|
+      .col-md-4
+        .card.shadow.mb-4
+          .card-header
+            .text-center
+              = u.username.capitalize
+          .card-body
+            .text-center
+              = gravatar_for(u, size: 150)
+          .card-footer
+            .float-left
+              = time_ago_in_words(u.created_at)
+              |  ago
+            .float-right
+              = link_to 'show', user_path(u), class: 'btn btn-sm btn-outline-light mr-1'
+              - if logged_in? && u == current_user
+                = link_to  "edit", edit_user_path(u), class: 'btn btn-sm btn-outline-warning mr-1'
+                = link_to  "delete", user_path(u), method: :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-sm btn-outline-danger'
+  .apple_pagination.mb-4
+    = will_paginate @users, :container => false

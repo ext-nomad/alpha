@@ -1,13 +1,13 @@
-
+.spacer
 = render 'layouts/errors', obj: @user
-.row
-  .col-lg-4.mx-auto
-    .card-register.shadow
-      .card-title
-        h3 
-          | Registration
-          .row
-          | form
-      = render  'users/form'
-    .text-right
-      = link_to  "Back", root_path
+.container
+  .row.justify-content-center
+    .col-lg-4
+      .card-register.shadow
+        .card-title
+          h3 
+            | Registration
+            .row
+            | form
+        = render  'users/form'
+

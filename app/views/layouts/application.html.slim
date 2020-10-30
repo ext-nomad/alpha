@@ -11,13 +11,11 @@ html
   body class="#{body_class}"
     header
       = render 'layouts/header'
-
     main
-      .container
-        = render 'layouts/messages'
-        
-        = yield
-        br
+      = render 'layouts/messages'
+      
+      = yield
+      br
 
     footer
       = render 'layouts/footer'
