@@ -1,6 +1,10 @@
 class HomeController < ApplicationController
   def index
-    redirect_to user_path(current_user) if logged_in?
+    if logged_in?
+      redirect_to user_path(current_user)
+    else
+      redirect_to login_path
+    end
   end
 
   def about; end

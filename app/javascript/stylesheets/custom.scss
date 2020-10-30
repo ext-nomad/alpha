@@ -213,6 +213,16 @@ nav.sticky {
   border-radius: 30px;
 }
 
+.alert {
+  position: absolute !important;
+  z-index: 50;
+  top: 130px;
+  transition: 0.6s all;
+  p {
+    margin: 0;
+  }
+}
+
 .apple_pagination {
   background: rgba(0, 0, 0, 0);
   text-align: center;

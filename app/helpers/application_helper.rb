@@ -8,7 +8,7 @@ module ApplicationHelper
   end
 
   def body_class
-    if current_page?(login_path) || current_page?(signup_path)
+    if current_page?(login_path) || current_page?(signup_path) || current_page?(users_path)
       'register'
     else
       'main'

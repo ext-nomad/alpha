@@ -21,7 +21,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to articles_path, notice: "#{@user.username.capitalize} welcome to the Alpha Blog!"
     else
-      redirect_to signup_path
+      redirect_to signup_path, alert: @user.errors.full_messages.join(" \n")
     end
   end
 
