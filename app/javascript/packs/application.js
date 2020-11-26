@@ -2,7 +2,7 @@ require("@rails/ujs").start();
 require("turbolinks").start();
 require("@rails/activestorage").start();
 require("channels");
-require("stylesheets/custom.scss");
+require("stylesheets/application.scss");
 
 import "bootstrap/dist/js/bootstrap";
 import "bootstrap/dist/css/bootstrap";
