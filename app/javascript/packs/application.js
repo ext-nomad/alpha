@@ -17,7 +17,4 @@ $(document).on("turbolinks:load", function () {
     tbg.style.transform =
       "translate3d(0px, " + window.scrollY * 0.5 + "px, 0px)";
   });
-  // window.addEventListener("mousemove", (event) => {
-  //   console.log(event.pageX, event.pageY);
-  // });
 });
