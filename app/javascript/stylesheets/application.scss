@@ -22,7 +22,7 @@ body {
 }
 
 body.main {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1));
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
   // background-image: url("../../assets/images/bg.jpg");
   background-attachment: fixed;
   background-position: center;
@@ -202,6 +202,10 @@ nav.sticky {
 
 .card {
   background-color: rgba(104, 104, 104, 0.5);
+}
+
+.text-white {
+  color: white !important;
 }
 
 .styled-card {

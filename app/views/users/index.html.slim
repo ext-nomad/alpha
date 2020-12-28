@@ -1,5 +1,5 @@
 .spacer
-.container
+.container.text-white
   .card.shadow.mb-4
     .card-body
       .text-center
@@ -8,7 +8,7 @@
 
   .row.justify-content-md-center
     - @users.each do |u|
-      .col-md-4
+      .col-auto
         .card.shadow.mb-4
           .card-header
             .text-center
@@ -17,7 +17,7 @@
             .text-center
               = gravatar_for(u, size: 150)
           .card-footer
-            .float-left
+            .float-left.mr-2
               = time_ago_in_words(u.created_at)
               |  ago
             .float-right

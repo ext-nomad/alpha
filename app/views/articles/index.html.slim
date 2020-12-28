@@ -6,8 +6,8 @@
         h1 All articles
 
   .row.justify-content-md-center
-    .col-md-8
-      - @articles.each do |a|
+    - @articles.each do |a|
+      .col-auto
         = render 'articles/article', a: a
   .apple_pagination.mb-4
     = will_paginate @articles, :container => false
