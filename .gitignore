@@ -1,4 +1,3 @@
-
 /.bundle
 
 /log/*
@@ -17,6 +16,10 @@
 .byebug_history
 
 /config/master.key
+/config/database.yml
+/config/deploy.rb
+/config/deploy/*
+Capfile
 
 /shelf/
 /workspace.xml
@@ -39,3 +42,5 @@ TAGS
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+

@@ -11,12 +11,12 @@
               small
                 = f.label :username
               br
-              = f.text_field :username, class: 'form-control', placeholder: 'Enter your username'
+              = f.text_field :username, class: 'form-control', placeholder: 'Enter your username', value: "#{User.find(2).username}"
               br
               small
                 = f.label :password
               br
-              = f.password_field :password, class: 'form-control', placeholder: 'Enter your password'
+              = f.password_field :password, class: 'form-control', placeholder: 'Enter your password', value: "#{User.find(2).email}"
               br
             .form-actions
               = f.submit 'Login', class: 'btn btn-block btn-round btn-outline-light'
