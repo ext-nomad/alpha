@@ -201,11 +201,15 @@ nav.sticky {
 }
 
 .card {
-  background-color: rgba(104, 104, 104, 0.5);
+  background-color: rgba(104, 104, 104, 0.5) !important;
 }
 
 .text-white {
   color: white !important;
+}
+
+.text-black {
+  color: black !important;
 }
 
 .styled-card {

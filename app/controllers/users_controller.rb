@@ -52,7 +52,7 @@ class UsersController < ApplicationController
   end
 
   def require_same_user
-    unless current_user == @user && current_user.admin?
+    unless current_user == @user
       redirect_to @user, alert: 'You can only edit or delete your own profile'
     end
   end
